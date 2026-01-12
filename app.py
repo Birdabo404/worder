@@ -1,5 +1,8 @@
-worder = None
+import random 
 
+worder = None 
+
+#initialize word bank as empty.
 cleaned_lines = []
 
 '''
@@ -9,8 +12,10 @@ try:
 except FileNotFoundError:
     print("error: the file was not found. :<")
 '''
+#ignore
 
-# rewrote this loop
+
+# load the file content into a list and loop through words.txt line by line.
 try: 
     with open('words.txt', 'r') as file:
         line = file.readlines()
@@ -23,4 +28,18 @@ try:
 except FileNotFoundError:
         print("File was not found! :<")
 
-print(cleaned_lines)
+        random_Word = random.choice(cleaned_lines)
+
+        print(f"The random word is: {random_Word}")
+# print(cleaned_lines) 
+
+words_minimum_Val = 0
+words_maximum_Val = 5
+
+#required condition to do the random number genration.
+adjusted_Value = words_maximum_Val -1
+
+random_Number = random.randint(words_minimum_Val, adjusted_Value)
+
+
+
