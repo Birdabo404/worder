@@ -14,7 +14,6 @@ welcomeMessage = """
                                                                                                                                                                       
                                                                                                                                                                       
                                                                                                                                                                       """
-playerName = None
 incorrectLettersPosition = None  # Tracks the letters that are in the incorrect postion.
 correctLettersPosition = (
     None  # Tracks the letters the player guessed that are not in the word bank.)
@@ -43,10 +42,10 @@ except FileNotFoundError:
 random_Words = random.choice(word_Bank)
 # print(f"The chosen word is: {random_Words}")
 
-while playerName == "":
-    print("Enter your username before starting.")
-    playerName = input("Enter your username >> ")
+playerName = input("What is you desired username? \n Input username >> ")
 
-print(f"{welcomeMessage} \nHello {playerName}!")
+while playerName != "":
+    print(f"{welcomeMessage} \nHello {playerName}!")
+    break
 print(f"There are {len(random_Words)} letters in the words to guess.")
 print(f"there are {currentTurn} turns left.")
