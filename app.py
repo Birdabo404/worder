@@ -16,8 +16,13 @@ incorrectLettersPosition = None  # Tracks the letters that are in the incorrect 
 correctLettersPosition = (
     None  # Tracks the letters the player guessed that are not in the word bank.
 )
-maxTurnAllowed = None  # Max number of player's turn.
-currentTurnLeft = None  # Current number of player's turn.
+currentTurn = None
+
+maxTurnAllowed = 3
+turnTaken = 0
+
+turnLeft = maxTurnAllowed - turnTaken
+
 
 # initialize word bank as empty.
 word_Bank = []
@@ -47,4 +52,4 @@ while playerName != "":
     break
 print("The system has chosen a word! ")
 print(f"There are {len(random_Words)} letters in the chosen word to guess.")
-print(f"You have a total of {currentTurnLeft} turns left.")
+print(f"You have a total of {turnLeft} turns left.")
